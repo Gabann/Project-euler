@@ -1,9 +1,12 @@
+package org.example;
+
 public class Problem7
 {
 	public static void main(String [] args)
 	{
-		int primeCount = 0, number = 3;
-		
+		int primeCount = 0;
+		int number = 3;
+
 		while (primeCount < 10000)
 		{
 			int divider = 3;

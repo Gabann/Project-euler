@@ -1,3 +1,5 @@
+package org.example;
+
 public class Problem8
 {
 	public static void main(String[] args)
@@ -13,12 +15,12 @@ public class Problem8
 			for (int j = 0; j < consecutiveNumbers; j++)
 			{
 				int currentNumber = Integer.parseInt(String.valueOf(number.charAt(i + j)));
-				
+
 				if (currentNumber == 0){
 					i = i + j;
 					break;
 				}
-				
+
 				numberArray[j] = currentNumber;
 			}
 
@@ -28,7 +30,7 @@ public class Problem8
 			{
 				a = a * k;
 			}
-			
+
 			if(a > max)
 			{
 				max = a;

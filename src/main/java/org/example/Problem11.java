@@ -1,7 +1,9 @@
+package org.example;
+
 @SuppressWarnings("OctalInteger")
 public class Problem11
 {
-	int[][] Grid = {
+	static int[][] grid = {
 			{8,02,22,97,38,15,00,40,00,75,04,05,07,78,52,12,50,77,91,8},
 			{49,49,99,40,17,81,18,57,60,87,17,40,98,43,69,48,04,56,62,00},
 			{81,49,31,73,55,79,14,29,93,71,40,67,53,88,30,03,49,13,36,65},
@@ -23,23 +25,23 @@ public class Problem11
 			{20,73,35,29,78,31,90,01,74,31,49,71,48,86,81,16,23,57,05,54},
 			{01,70,54,71,83,51,54,69,16,92,33,48,61,43,52,01,89,19,67,48}
 	};
-	
-	public double CheckRow(int row, int column){
+
+	public static double checkRow(int row, int column){
 		double total = 1;
-		
+
 		if (column + 4 > 19){
 			return 0;
 		}
 
 		for (int i = 0; i < 4; i++)
 		{
-			total = total * Grid[row][column + i];
+			total = total * grid[row][column + i];
 		}
-		
+
 		return total;
 	}
 
-	public double CheckColumn(int row, int column){
+	public static double checkColumn(int row, int column){
 		double total = 1;
 
 		if (row + 4 > 19){
@@ -48,13 +50,13 @@ public class Problem11
 
 		for (int i = 0; i < 4; i++)
 		{
-			total = total * Grid[row + i][column];
+			total = total * grid[row + i][column];
 		}
 
 		return total;
 	}
 
-	public double CheckDiagonalLeft(int row, int column){
+	public static double checkDiagonalLeft(int row, int column){
 		double total = 1;
 
 		if (column + 4 > 19 || row - 4 < 0){
@@ -63,14 +65,14 @@ public class Problem11
 
 		for (int i = 0; i < 4; i++)
 		{
-			total = total * Grid[row - i][column + i];
+			total = total * grid[row - i][column + i];
 		}
 
 		return total;
-		
+
 	}
 
-	public double CheckDiagonalRight(int row, int column){
+	public static double checkDiagonalRight(int row, int column){
 		double total = 1;
 
 		if (column + 4 > 19 || row + 4 > 19){
@@ -79,42 +81,41 @@ public class Problem11
 
 		for (int i = 0; i < 4; i++)
 		{
-			total = total * Grid[row + i][column + i];
+			total = total * grid[row + i][column + i];
 		}
-		
+
 		return total;
 	}
-	
-	public double CheckGrid(int row, int column){
+
+	public static double checkGrid(int row, int column){
 		double result = 0;
-		
-		double rowResult = CheckRow(row, column);
-		double columnResult = CheckColumn(row, column);
-		double diagonalRightResult = CheckDiagonalLeft(row, column);
-		double diagonalLeftResult = CheckDiagonalRight(row, column);
-		
+
+		double rowResult = checkRow(row, column);
+		double columnResult = checkColumn(row, column);
+		double diagonalRightResult = checkDiagonalLeft(row, column);
+		double diagonalLeftResult = checkDiagonalRight(row, column);
+
 		result = Math.max(result, rowResult);
 		result = Math.max(result, columnResult);
 		result = Math.max(result, diagonalRightResult);
 		result = Math.max(result, diagonalLeftResult);
-		
+
 		return result;
 	}
-	
+
 	public static void main(String[] args)
 	{
-		Problem11 test = new Problem11();
-		
+
 		double max = 0;
 
-		for (int row = 0; row < test.Grid.length; row++)
+		for (int row = 0; row < grid.length; row++)
 		{
-			for (int column = 0; column < test.Grid[row].length; column++)
+			for (int column = 0; column < grid[row].length; column++)
 			{
-				max = Math.max(max, test.CheckGrid(row, column));
+				max = Math.max(max, checkGrid(row, column));
 			}
 		}
-		
+
 		System.out.print(max);
 	}
 }

@@ -1,6 +1,8 @@
+package org.example;
+
 public class Problem10
 {
-	public boolean IsPrime(int input){
+	public static boolean isPrime(int input){
 		if (input % 2 == 0){
 			return false;
 		}
@@ -11,24 +13,23 @@ public class Problem10
 				return false;
 			}
 		}
-		
+
 		return true;
 	}
 
 	public static void main(String[] args)
 	{
-		Problem10 test = new Problem10();
-		
-		int target = 2000000;
+
+		int target = 200000;
 		double total = 2;
 
 		for (int i = 3; i <= target; i += 2)
 		{
-			if (test.IsPrime(i)){
+			if (isPrime(i)){
 				total += i;
 			}
 		}
-		
+
 		System.out.print(total);
 	}
 }
