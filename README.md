@@ -64,6 +64,7 @@
 
 [![Java][Java-badge]][Java-url]
 [![Junit][Junit-badge]][Junit-url]
+[![Maven][maven-badge]][maven-url]
 
 <div align="right"><a href="#readme-top">back to top</a></div>
 
@@ -186,3 +187,7 @@ Distributed under the 'LICENSE' License. See [`LICENSE`](https://github.com/Gaba
 [Junit-badge]: https://img.shields.io/badge/Junit-25A162?style=for-the-badge&logo=junit5&logoColor=white
 
 [Junit-url]: https://junit.org/junit5/
+
+[maven-badge]: https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white
+
+[maven-url]: https://maven.apache.org/
