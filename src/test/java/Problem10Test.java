@@ -1,4 +1,4 @@
-import org.example.Problem10;
+import problems.Problem10;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;

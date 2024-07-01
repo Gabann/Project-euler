@@ -1,6 +1,6 @@
-package org.example;
+package problems;
 
-public class Problem8
+public class Problem08
 {
 	public static void main(String[] args)
 	{
